@@ -1,5 +1,5 @@
-HOST=localhost
-PORT=61111
+HOST=${HOST:-localhost}
+PORT=${PORT:-50000}
 export HTTP_PROXY=http://$HOST:$PORT
 export HTTPS_PROXY=http://$HOST:$PORT
 export ALL_PROXY=http://$HOST:$PORT
