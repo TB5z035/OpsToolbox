@@ -4,7 +4,12 @@ set -x
 
 NORMAL_USER=${1:-$NORMAL_USER}
 echo "Add user ${NORMAL_USER}"
-NORMAL_USER=${1:-$NORMAL_USER}
+
+if id -u ${NORMAL_USER} >/dev/null 2>&1; then
+    echo "User ${NORMAL_USER} already exists"
+    exit 0
+fi
+
 useradd -md /data/${NORMAL_USER} -s /bin/bash ${NORMAL_USER}
 echo ${ADMIN_USER}:${ADMIN_USER}@123! | chpasswd
 chage -d 0 $ADMIN_USER

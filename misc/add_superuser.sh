@@ -3,6 +3,11 @@ set -e
 set -x
 
 ADMIN_USER=${1:-$ADMIN_USER}
+if id -u ${ADMIN_USER} >/dev/null 2>&1; then
+    echo "User ${ADMIN_USER} already exists"
+    exit 0
+fi
+
 echo "Add superuser ${ADMIN_USER}"
 ADMIN_USER=${1:-$ADMIN_USER}
 useradd -md /data/${ADMIN_USER} -s /bin/bash ${ADMIN_USER}
