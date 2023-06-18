@@ -16,5 +16,6 @@ chage -d 0 $ADMIN_USER
 
 sudo -u ${ADMIN_USER} /usr/local/miniconda3/bin/conda init bash
 sudo -u ${ADMIN_USER} /usr/local/miniconda3/bin/conda config --set auto_activate_base false
+sudo -u ${ADMIN_USER} /usr/local/miniconda3/bin/conda config clean -i -y
 sudo -u ${ADMIN_USER} cp ./sources/.condarc /data/${ADMIN_USER}/.condarc
 sudo -u ${ADMIN_USER} conda run pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
