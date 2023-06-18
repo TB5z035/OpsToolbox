@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+set -x
 
 HOSTNAME=${1:-$HOSTNAME}
 ADMIN_USER=${2:-"cloudroot"}
