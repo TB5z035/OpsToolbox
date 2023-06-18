@@ -2,8 +2,8 @@
 set -e
 set -x
 
-HOSTNAME=${1:-$HOSTNAME}
-ADMIN_USER=${2:-"cloudroot"}
+ADMIN_USER=${1:-"cloudroot"}
+HOSTNAME=${2:-$HOSTNAME}
 
 # Set up apt tuna source 
 ./misc/change_apt_source.sh
