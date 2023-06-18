@@ -10,6 +10,7 @@ if id -u ${NORMAL_USER} >/dev/null 2>&1; then
     exit 0
 fi
 
+mkdir /data
 useradd -md /data/${NORMAL_USER} -s /bin/bash ${NORMAL_USER}
 echo ${ADMIN_USER}:${ADMIN_USER}@123! | chpasswd
 chage -d 0 $ADMIN_USER
