@@ -6,7 +6,7 @@ ADMIN_USER=${1:-"cloudroot"}
 HOSTNAME=${2:-$HOSTNAME}
 
 # Set up apt tuna source 
-./misc/change_apt_source.sh
+./install/tuna_source.sh
 
 # Install conda
 ./install/setup_conda.sh
